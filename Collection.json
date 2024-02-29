@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "d52819f6-002a-4eff-989a-c06d991aad22",
+		"name": "Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19645675"
+	},
+	"item": [
+		{
+			"name": "sendOTP",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://connect.hicare.in/mobileapi/api/SMS/SendOTP?mobileNo=9769283591",
+					"protocol": "https",
+					"host": [
+						"connect",
+						"hicare",
+						"in"
+					],
+					"path": [
+						"mobileapi",
+						"api",
+						"SMS",
+						"SendOTP"
+					],
+					"query": [
+						{
+							"key": "mobileNo",
+							"value": "9769283591"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "validateAccount",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "getDashboard",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Ijk3NjkyODM1OTFAaGljYXJlLmluIiwiTW9iaWxlTm8iOiI5NzY5MjgzNTkxIiwianRpIjoiOTJlZGIyZjItNWE3Ni00NzMzLThjMDEtMTExODI5MTkxNzU0IiwiZXhwIjoxNzA5MzI5NTE5LCJpc3MiOiJoaWNhcmUubW9iaWxlLmFwaSIsImF1ZCI6ImhpY2FyZS5tb2JpbGUuYXBpIn0.8HvEFxJZz2cBYWbD1z8X_DE9qOUVtW0KPueovzr7CEo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://connect.hicare.in/mobileapi/api/Dashboard/GetDashboard?mobileNo=9769283591",
+					"protocol": "https",
+					"host": [
+						"connect",
+						"hicare",
+						"in"
+					],
+					"path": [
+						"mobileapi",
+						"api",
+						"Dashboard",
+						"GetDashboard"
+					],
+					"query": [
+						{
+							"key": "mobileNo",
+							"value": "9769283591"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Notification",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"MobileNo\": \"9769283591\",\r\n  \"Title\": \"HiCare Test\",\r\n  \"Message\": \"Hi Bhavin.\",\r\n  \"NotificationImage\": \"https://s3.ap-south-1.amazonaws.com/hicare-others/05da731f-5669-4770-9ea9-061c6d954042.png\",\r\n  \"PageLink\": \"Service|21|3778|400605|8976399055|https://s3.ap-south-1.amazonaws.com/hicare-others/8b88c42f-f538-4f1e-9d82-1c085035d9f1.png\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mobileapi.hicare.in/mobileapi/api/Notification/PublishAppNotificationByMobileNoAsync",
+					"protocol": "https",
+					"host": [
+						"mobileapi",
+						"hicare",
+						"in"
+					],
+					"path": [
+						"mobileapi",
+						"api",
+						"Notification",
+						"PublishAppNotificationByMobileNoAsync"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Complaint",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://connect.hicare.in/mobileapi/api/Complaint/GetAllComplaintByMobileNo?mobileNo=9769283591",
+					"protocol": "https",
+					"host": [
+						"connect",
+						"hicare",
+						"in"
+					],
+					"path": [
+						"mobileapi",
+						"api",
+						"Complaint",
+						"GetAllComplaintByMobileNo"
+					],
+					"query": [
+						{
+							"key": "mobileNo",
+							"value": "9769283591"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
