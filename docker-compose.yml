@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  newman:
+    build: .
+    ports:
+      - "8078:8087"  
+    volumes:
+      - ./reports:/usr/src/app/reports
+    environment:
+      - NODE_ENV=production
+    networks:
+      - newman_net
+
+networks:
+  newman_net:
+    driver: bridge
